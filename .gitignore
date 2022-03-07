@@ -1,5 +1,5 @@
 # Ignore node_modules folder
-node_modules
+/node_modules
 
 # Ignore all text files
 *.txt
@@ -9,3 +9,22 @@ node_modules
 
 # Ignore SASS config files
 .sass-cache
+
+# dependencies
+/.pnp
+.pnp.js
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
