@@ -1,22 +1,25 @@
 <!-- <pre>{{items | json}}</pre> -->
 
 <div class="slider">
-    <div class="slide" *ngFor="let item of items" @slideFade>
-        <div class="slide-bg">
-            <img class="slide-bg-image" [src]="'https://image.tmdb.org/t/p/original/'+ item.backdrop_path" alt="">
-        </div>
-        <div class="slide-pane">
-            <h2 class="name">{{item.title}}</h2>
-            <div class="meta">
-                <div class="info">
-                    <span class="rating"><span class="material-icons">star</span><span
-                            class="rating-value">{{item.vote_average}}/10</span>
-                        <span>{{item.vote_count}}</span>
-                        <span>{{item.release_date | date : 'yyyy'}}</span>
-                    </span>
-                </div>
+    <ng-container *ngFor="let item of items; let i = index">
+        <div class="slide" *ngIf="i === currentSlideIndex" @slideFade>
+            <div class="slide-bg">
+                <img class="slide-bg-image" [src]="'https://image.tmdb.org/t/p/original/'+ item.backdrop_path" alt="">
             </div>
-            <div class="desc mt-5">{{item.overview}}</div>
+            <div class="slide-pane">
+                <h2 class="name">{{item.title}}</h2>
+                <div class="meta">
+                    <div class="info">
+                        <span class="rating"><span class="material-icons">star</span><span
+                                class="rating-value">{{item.vote_average}}/10</span>
+                            <span>{{item.vote_count}}</span>
+                            <span>{{item.release_date | date : 'yyyy'}}</span>
+                        </span>
+                    </div>
+                </div>
+                <div class="desc mt-5">{{item.overview}}</div>
+            </div>
         </div>
-    </div>
+    </ng-container>
+
 </div>
