@@ -13,7 +13,7 @@ export class HomeComponent implements OnInit {
 
   ngOnInit(): void {
     this.moviesService.getMovies().subscribe((response) => {
-      this.movies = response;
+      this.movies = response.results;
     });
   }
 }

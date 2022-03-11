@@ -4,8 +4,6 @@
   display: flex;
   flex-direction: column;
   height: 35rem;
-  //   color: #999;
-  //   background-color: #000;
   position: relative;
   .slide {
     position: relative;
@@ -53,12 +51,27 @@
         color: $lightGray;
 
         .info {
+          display: flex;
           span {
             &:not(:last-child, :first-child):after {
               content: '|';
               margin-right: 9px;
               margin-left: 9px;
             }
+          }
+
+          .rating {
+            display: flex;
+            align-items: center;
+            .material-icons {
+              margin-right: 5px;
+              color: #d4af37;
+            }
+
+            // &-value {
+            //   color: $white;
+            //   font-size: 1.2rem;
+            // }
           }
         }
       }

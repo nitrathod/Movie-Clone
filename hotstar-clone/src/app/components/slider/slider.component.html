@@ -1,24 +1,22 @@
+<!-- <pre>{{items | json}}</pre> -->
+
 <div class="slider">
-    <div class="slide">
+    <div class="slide" *ngFor="let item of items">
         <div class="slide-bg">
-            <img class="slide-bg-image" src="https://image.tmdb.org/t/p/original/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg"
-                alt="">
+            <img class="slide-bg-image" [src]="'https://image.tmdb.org/t/p/original/'+ item.backdrop_path" alt="">
         </div>
         <div class="slide-pane">
-            <h2 class="name">Fight Club</h2>
+            <h2 class="name">{{item.title}}</h2>
             <div class="meta">
                 <div class="info">
-                    <span class="rating"><span>Star</span><span class="rating-value">7.5/10</span>
-                        <span>463 reviews</span>
-                        <span>2021</span>
+                    <span class="rating"><span class="material-icons">star</span><span
+                            class="rating-value">{{item.vote_average}}/10</span>
+                        <span>{{item.vote_count}}</span>
+                        <span>{{item.release_date | date : 'yyyy'}}</span>
                     </span>
                 </div>
             </div>
-            <div class="desc mt-5">
-                A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a
-                shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in
-                every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion."
-            </div>
+            <div class="desc mt-5">{{item.overview}}</div>
         </div>
     </div>
 </div>
