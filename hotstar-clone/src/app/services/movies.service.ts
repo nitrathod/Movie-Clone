@@ -9,7 +9,7 @@ export class MoviesService {
   apiKey = 'c0f9f2d9cb978825b4fea0898bc2d598';
   constructor(private http: HttpClient) {}
 
-  getMovies() {
-    return this.http.get<any>(`${this.baseUrl}/movie/upcoming?api_key=${this.apiKey}`);
+  getMovies(type = 'upcoming') {
+    return this.http.get(`${this.baseUrl}/movie/${type}?api_key=${this.apiKey}`);
   }
 }
