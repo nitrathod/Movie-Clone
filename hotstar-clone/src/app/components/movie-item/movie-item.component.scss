@@ -3,16 +3,15 @@
 .movie-item {
   position: relative;
   display: block;
-  min-height: 300px;
+  min-height: 240px;
   border-radius: 5px;
   background-color: $bgColorLight;
-  border-radius: 1px solid $lightGray;
 
   &-image {
     img {
       width: 100%;
       border-radius: 5px;
-      height: 275px;
+      height: 225px;
       object-fit: cover;
     }
   }
@@ -31,5 +30,10 @@
       margin-right: 5px;
       color: #d4af37;
     }
+  }
+
+  &-title {
+    font-weight: bold;
+    margin: 0.5rem;
   }
 }
