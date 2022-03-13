@@ -1,10 +1,12 @@
-<div class="movie-item">
-    <div class="movie-item-rating">
-        <i class="app-icon material-icons">star</i>
-        <span>7</span>/10
-    </div>
-    <div class="movie-item-image">
-        <img src="https://image.tmdb.org/t/p/original/74xTEgt7R36Fpooo50r9T25onhq.jpg" alt="">
-    </div>
-    <div class="movie-item-title">The Vault</div>
-</div>
+<ng-container *ngIf="itemData">
+    <a class="movie-item">
+        <div class="movie-item-rating">
+            <i class="app-icon material-icons">star</i>
+            <span>{{itemData.vote_average}}</span>/10
+        </div>
+        <div class="movie-item-image">
+            <img [src]="'https://image.tmdb.org/t/p/original' + itemData.poster_path" [alt]="itemData.title" />
+        </div>
+        <div class="movie-item-title">{{itemData.title}}</div>
+    </a>
+</ng-container>
