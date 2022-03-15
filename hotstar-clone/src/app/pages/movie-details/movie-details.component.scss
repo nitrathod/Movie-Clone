@@ -1,0 +1,17 @@
+@import '../../../styles/colors';
+
+:host ::ng-deep {
+  .p-tabview-nav {
+    justify-content: center;
+    gap: 4px;
+
+    li {
+      .p-tabview-nav-link {
+        background-color: $bgColor;
+      }
+      &.p-highlight .p-tabview-nav-link {
+        background-color: $bgColor;
+      }
+    }
+  }
+}
