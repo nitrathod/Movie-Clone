@@ -1,11 +1,57 @@
 <ng-container *ngIf="movie">
     <slider [items]="[movie]" [isBanner]="true"></slider>
     <p-tabView>
-        <p-tabPanel header="Overviews">
-            Content 1
+        <p-tabPanel header="Overview">
+            <div class="grid">
+                <div class="col-12 md:col-3 lg:col-3">
+                    <img class="poster" [src]="imagesSizes.medium + movie.poster_path" [alt]="movie.title">
+                </div>
+                <div class="col-12 md:col-9 lg:col-9">
+                    <h2>Overview</h2>
+                    <p class="overview">{{movie.overview}}</p>
+                    <div class="stats">
+                        <div class="label">Release Date:</div>
+                        <div class="value">
+                            {{movie.release_date | date: 'dd.MM.yyyy'}}
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="label">Language: </div>
+                        <div class="value">
+                            {{movie.original_language | uppercase}}
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="label">Revenue: </div>
+                        <div class="value">
+                            {{movie.revenue | currency}}
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="label">Runtime: </div>
+                        <div class="value">
+                            {{movie.runtime}} mins.
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="label">Status: </div>
+                        <div class="value">
+                            {{movie.status}}
+                        </div>
+                    </div>
+                    <div class="stats">
+                        <div class="label">Genres: </div>
+                        <div class="value">
+                            <span *ngFor="let genre of movie.genres">
+                                {{genre.name}}
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </p-tabPanel>
-        <p-tabPanel header="Vidoes">
-            Content 2
+        <p-tabPanel header="Videos">
+
         </p-tabPanel>
         <p-tabPanel header="Photos">
             Content 3
