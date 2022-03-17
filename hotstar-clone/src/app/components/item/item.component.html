@@ -2,7 +2,7 @@
     <a class="item" [routerLink]="'/movie/' + itemData.id">
         <div class="item-rating">
             <i class="app-icon material-icons">star</i>
-            <span>{{itemData.vote_average}}</span>/10
+            <span>{{itemData.vote_average | number:'1.1-1'}}</span>/10
         </div>
         <div class="item-image">
             <img [src]="imagesSizes.medium + itemData.poster_path" [alt]="itemData.title" />
