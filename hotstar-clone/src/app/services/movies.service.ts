@@ -44,6 +44,16 @@ export class MoviesService {
     );
   }
 
+  getMovieSimilar(id: string) {
+    return this.http
+      .get<MovieDto>(`${this.baseUrl}/movie/${id}/similar?api_key=${this.apiKey}`)
+      .pipe(
+        switchMap((res) => {
+          return of(res.results.slice(0, 12));
+        })
+      );
+  }
+
   searchMovies(page: number) {
     return this.http
       .get<MovieDto>(`${this.baseUrl}/movie/popular?page=${page}&api_key=${this.apiKey}`)
