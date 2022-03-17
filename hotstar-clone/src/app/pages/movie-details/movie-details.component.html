@@ -56,12 +56,18 @@
                     <div class="col-12 md:col-4 lg:col-4">
                         <video-embed [key]="movieVideo.key" [site]="movieVideo.site"></video-embed>
                     </div>
-
                 </ng-container>
             </div>
         </p-tabPanel>
         <p-tabPanel header="Photos">
-            Content 3
+            <div class="grid">
+                <ng-container *ngFor="let movieImage of movieImages?.backdrops">
+                    <div class="col-12 md:col-4 lg:col-4">
+                        <p-image [src]="imagesSizes.large + movieImage.file_path" alt="Image" width="100%"
+                            [preview]="true"></p-image>
+                    </div>
+                </ng-container>
+            </div>
         </p-tabPanel>
     </p-tabView>
 </ng-container>
