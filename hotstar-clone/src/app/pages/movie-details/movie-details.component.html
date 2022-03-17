@@ -70,4 +70,13 @@
             </div>
         </p-tabPanel>
     </p-tabView>
+    <p-carousel [numVisible]="5" [autoplayInterval]="3000" [circular]="true" *ngIf="movieCredits"
+        [value]="movieCredits.cast">
+        <ng-template let-actor pTemplate="item">
+            <div class="actor">
+                <img *ngIf="actor.profile_path" [src]="imagesSizes.medium + actor.profile_path" alt="{{actor.name}}">
+                <span>{{actor.name}}</span>
+            </div>
+        </ng-template>
+    </p-carousel>
 </ng-container>
